@@ -1,7 +1,7 @@
-const core = import('@actions/core');
-const { exec } = import('@actions/exec');
-const path = import('path');
-import process from 'process'
+import * as core from '@actions/core';
+import * as exec from '@actions/exec';
+import * as path from 'path';
+import * as process from 'process'
 
 async function run() {
   try {
