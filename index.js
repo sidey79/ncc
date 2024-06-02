@@ -1,6 +1,7 @@
-const core = require('@actions/core');
-const { exec } = require('@actions/exec');
-const path = require('path');
+const core = import('@actions/core');
+const { exec } = import('@actions/exec');
+const path = import('path');
+import process from 'process'
 
 async function run() {
   try {
