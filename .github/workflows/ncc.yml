@@ -10,11 +10,20 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         cache: 'yarn'
+        node-version: '20'
+
     - run: yarn install
+    - run: yarn lint
     - run: yarn test
-    - uses: sidey79/ncc@main
+    - run: yarn package
+    
+    - name: Self test create dist file
+      id: selftest
+      uses: ./
       with:
-        src: 'index.js'
+        src: 'index.cjs'
+        #ncc_args: '-o testdist'
+        
     - uses: EndBug/add-and-commit@v9
       if: ${{ github.actor != 'dependabot[bot]' }}
       with:
