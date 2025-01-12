@@ -11,10 +11,11 @@ jobs:
       with:
         cache: 'yarn'
     - run: yarn install
-    - run: yarn test
-    - uses: sidey79/ncc@main
-      with:
-        src: 'index.js'
+    - run: yarn lint
+    - run: yarn package
+    #- uses: sidey79/ncc@main
+    #  with:
+    #    src: 'index.cjs'
     - uses: EndBug/add-and-commit@v9
       if: ${{ github.actor != 'dependabot[bot]' }}
       with:
