@@ -21,8 +21,8 @@ jobs:
       id: selftest
       uses: ./
       with:
-        src: './func.cjs'
-        ncc_args: '-o testdist'
+        src: 'index.cjs'
+        #ncc_args: '-o testdist'
         
     - uses: EndBug/add-and-commit@v9
       if: ${{ github.actor != 'dependabot[bot]' }}

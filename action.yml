@@ -1,6 +1,6 @@
 name: 'ncc action'
-description: 'use @sidey79/ncc to compile and push your github action dist! 🚀'
-author: 'Sven Butzek'
+description: 'use sidey79/ncc to compile and push your github action dist! 🚀'
+author: 'Sidey79'
 inputs:
   src: 
     description: 'source code dir/file to compile'
@@ -10,7 +10,7 @@ inputs:
     required: false
 runs:
   using: 'node20'
-  main: 'dist/index.js'
+  main: 'dist/index.cjs'
 branding:
   icon: 'box'  
   color: 'green'

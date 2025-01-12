@@ -41,7 +41,7 @@ describe('run', () => {
 
         expect(core.startGroup).toHaveBeenCalledWith('Compiling /my/workdir/index.js');
         expect(await exec.exec).toHaveBeenCalledTimes(2);
-        expect(await exec.exec).toHaveBeenNthCalledWith (1,'npm', ['install', "--no-save"]);
+        expect(await exec.exec).toHaveBeenNthCalledWith (1,'yarn', ['install', "--no-save"]);
         expect(await exec.exec).toHaveBeenNthCalledWith (2,'npx', ['@vercel/ncc', 'build', '/my/workdir/index.js']);
         expect(core.endGroup).toHaveBeenCalledWith('Compiling /my/workdir/index.js');
         expect(core.info).toHaveBeenCalledWith('Compiled successfully 📦 🎉 ');
