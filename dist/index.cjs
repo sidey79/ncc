@@ -28040,7 +28040,7 @@ async function run_compile() {
       core.startGroup(`Compiling ${src}`);
   
       // install dependencies
-      await exec('npm', ['install', "--no-save"]);
+      await exec.exec('yarn', ['install', "--no-save"]);
   
       // compile code
       const compileArgs = ['@vercel/ncc', 'build', src];
@@ -28050,7 +28050,7 @@ async function run_compile() {
         compileArgs.push(...args);
       }
   
-      await exec('npx', compileArgs);
+      await exec.exec('npx', compileArgs);
   
       core.endGroup(`Compiling ${src}`);
   
