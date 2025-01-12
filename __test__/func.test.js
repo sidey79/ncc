@@ -65,4 +65,17 @@ describe('run', () => {
         
         expect(core.setFailed).toHaveBeenCalledWith(`ncc failed! ${errorMessage} (src: /path/to/src/index.js, ncc_args: --debug)`);
     });
+
+    it('test args', async () => {
+        core.getInput.mockImplementation((name) => {
+            if (name === 'ncc_args') return '-o testdist, --debug, --no-cache';
+            if (name === 'src') return 'src/index.js';
+        });
+
+        path.resolve.mockReturnValue('/path/to/src/index.js');
+
+        run_compile();
+
+        expect(await exec.exec).toHaveBeenNthCalledWith (2,'npx', ['@vercel/ncc', 'build', '/path/to/src/index.js', '-o testdist', '--debug', '--no-cache']);
+    });
 });
