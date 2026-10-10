@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
-    - uses: sidey79/ncc@v3
+    - uses: sidey79/ncc@v3.0.1
       with:
         src: 'index.js'
                 
