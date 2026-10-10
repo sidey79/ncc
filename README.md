@@ -12,13 +12,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: sidey79/ncc@v1.0.0
+    - uses: actions/checkout@v7
+    - uses: sidey79/ncc@v3.0.1
       with:
         src: 'index.js'
                 
     # Push back the created dist file to your branch            
-    - uses: EndBug/add-and-commit@v7
+    - uses: EndBug/add-and-commit@v11
       with:
         message: Commit Dist file
         committer_name: GitHub Actions

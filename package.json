@@ -1,6 +1,6 @@
 {
   "name": "ncc",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "This action creates a single file for your nodejs module via vercel/ncc.",
   "main": "index.js",
   "type": "module",
