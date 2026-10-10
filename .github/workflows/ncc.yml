@@ -21,7 +21,7 @@ jobs:
       id: selftest
       uses: ./
       with:
-        src: 'index.cjs'
+        src: 'index.js'
         #ncc_args: '-o testdist'
         
     - uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5 # v9

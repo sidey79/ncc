@@ -1,10 +1,6 @@
-const core = require('@actions/core');
-const exec = require('@actions/exec');
-const path = require('path');
+import { jest } from '@jest/globals';
 
-const run_compile = require ('../func.cjs');
-
-jest.mock('@actions/core', () => ({
+jest.unstable_mockModule('@actions/core', () => ({
     getInput: jest.fn(),
     startGroup: jest.fn(),
     endGroup: jest.fn(),
@@ -12,16 +8,18 @@ jest.mock('@actions/core', () => ({
     setFailed: jest.fn(),
 }));
 
-jest.mock('@actions/exec', () => ({
+jest.unstable_mockModule('@actions/exec', () => ({
     exec: jest.fn(),
 }));
 
-jest.mock('path', () => ({
-     resolve: jest.fn(),
+jest.unstable_mockModule('path', () => ({
+    default: { resolve: jest.fn() },
 }));
 
-
-
+const core = await import('@actions/core');
+const exec = await import('@actions/exec');
+const { default: path } = await import('path');
+const { default: run_compile } = await import('../func.js');
 
 describe('run', () => {
     beforeEach(() => {
