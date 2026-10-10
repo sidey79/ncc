@@ -6,14 +6,26 @@
   "packageRules": [
     {
       "description": "Keine Digest-Updates fuer GitHub Actions (Pinning bleibt aktiv)",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["digest"],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
       "enabled": false
     },
     {
       "description": "Minor- und Patch-Updates automatisch mergen",
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "schedule": [
+      "* 0-23 * * 1"
+    ]
+  }
 }
