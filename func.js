@@ -1,7 +1,7 @@
-const core = require('@actions/core');
-const exec = require('@actions/exec');
-const path = require('path');
-const process = require('process');
+import * as core from '@actions/core';
+import * as exec from '@actions/exec';
+import path from 'path';
+import process from 'process';
 
 async function run_compile() {
     // initialize src
@@ -36,4 +36,4 @@ async function run_compile() {
     }
   }
 
-  module.exports = run_compile;
+export default run_compile;
